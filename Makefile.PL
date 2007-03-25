@@ -8,9 +8,12 @@ WriteMakefile(
     VERSION_FROM        => 'lib/Data/RuledValidator/Plugin/Japanese.pm',
     ABSTRACT_FROM       => 'lib/Data/RuledValidator/Plugin/Japanese.pm',
     PL_FILES            => {},
+    PREREQ_FATAL        => 1,
     PREREQ_PM => {
-        'Test::More' => 0,
+        'Test::More' => "",
 	'Data::FormValidator::Constraints::Japanese' => 0.04,
+	'Data::RuledValidator' => 0.09,
+	'Number::Phone::JP'    => "",
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Data-RuledValidator-Plugin-Japanese-*' },
