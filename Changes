@@ -1,5 +1,11 @@
 Revision history for Data-RuledValidator-Plugin-Japanese
 
+0.03 Thu Apr  5 23:06
+        fix/add document
+        Add DataRuledValidator::Language::Japanese. It is just a joke.
+          So, it doesn't cover all of operators.
+        use add_condition instead of add_condition_operator
+
 0.02 Mon Mar 26 03:42
         Fix and add documents
         add jp_mobile_softbank, jp_phone_number

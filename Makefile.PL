@@ -12,7 +12,7 @@ WriteMakefile(
     PREREQ_PM => {
         'Test::More' => "",
 	'Data::FormValidator::Constraints::Japanese' => 0.04,
-	'Data::RuledValidator' => 0.09,
+	'Data::RuledValidator' => 0.10,
 	'Number::Phone::JP'    => "",
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
