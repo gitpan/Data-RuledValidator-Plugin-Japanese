@@ -1,5 +1,9 @@
 Revision history for Data-RuledValidator-Plugin-Japanese
 
+0.04 Thu May  3 15:26
+	fix/add document
+	fix some ugly code in Language::Japanese
+     
 0.03 Thu Apr  5 23:06
         fix/add document
         Add DataRuledValidator::Language::Japanese. It is just a joke.

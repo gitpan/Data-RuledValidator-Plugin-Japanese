@@ -69,11 +69,11 @@ Data::RuledValidator::Plugin::Japanese - Data::RuledValidator plugin for Japanes
 
 =head1 VERSION
 
-Version 0.02
+Version 0.04
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.04';
 
 =head1 SYNOPSIS
 
@@ -225,7 +225,11 @@ This plugin just uses functions of Data::FormValidator::Constraints::Japanese.
 
 =item * Mail::Mobile::AddressJp
 
-This plgin is used in Data::FormValidator::Constraints::Japanese.
+This module is used in Data::FormValidator::Constraints::Japanese.
+
+=item * Number::Phone::JP
+
+This module is used in Data::FormValidator::Constraints::Japanese.
 
 =back
 

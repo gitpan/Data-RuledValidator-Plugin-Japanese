@@ -3,47 +3,45 @@ package Data::RuledValidator::Language::Japanese;
 use strict;
 use Data::RuledValidator;
 
-my @operator = (
-                is        => 'は',
-                length_jp => 'の長さは',
-               );
+my %operator =
+  (
+   'は'       => 'is'       ,
+   'の長さは' => 'length_jp',
+  );
 
-my @condition = (
-                 hiragana => 'ひらがな',
-                 hiragana => '平仮名',
-                 katakana => 'カタカナ',
-                 katakana => 'かたかな',
-                 katakana => '片仮名',
-                 jp_zip   => '郵便番号',
-                 jp_phone_number   => '電話番号',
-                 jp_mobile_email   => '携帯メール',
-                 jp_imode_email    => 'DoCoMoメール',
-                 jp_ezweb_email    => 'AUメール',
-                 jp_softbank_email => 'Softbankメール',
-                 jp_vodafone_email => 'Vodafoneメール',
-		 number            => '数字',
-		 alpha             => '英語',
-		 alphanum          => '英数字',
-		 word              => '単語',
-		 words             => '単文',
-		 not_null          => '必須',
-                );
+my %condition =
+  (
+   'ひらがな'       => 'hiragana'          ,
+   '平仮名'         => 'hiragana'          ,
+   'カタカナ'       => 'katakana'          ,
+   'かたかな'       => 'katakana'          ,
+   '片仮名'         => 'katakana'          ,
+   '郵便番号'       => 'jp_zip'            ,
+   '電話番号'       => 'jp_phone_number'   ,
+   '携帯メール'     => 'jp_mobile_email'   ,
+   'DoCoMoメール'   => 'jp_imode_email'    ,
+   'AUメール'       => 'jp_ezweb_email'    ,
+   'Softbankメール' => 'jp_softbank_email' ,
+   'Vodafoneメール' => 'jp_vodafone_email' ,
+   '数字'           => 'number'            ,
+   '英語'           => 'alpha'             ,
+   '英数字'         => 'alphanum'          ,
+   '単語'           => 'word'              ,
+   '単文'           => 'words'             ,
+   '必須'           => 'not_null'          ,
+  );
 
-for my $i (0 .. $#operator){
-  next if $i % 2;
-  my($name, $jp_name) = @operator[$i, $i + 1];
+for my $jp_name (keys %operator){
   Data::RuledValidator->__operator
       (
-       $jp_name => Data::RuledValidator->__operator($name)
+       $jp_name => Data::RuledValidator->__operator($operator{$jp_name})
       );
 }
 
-for my $i (0 .. $#condition){
-  next if $i % 2;
-  my($name, $jp_name) = @condition[$i, $i + 1];
+for my $jp_name (keys %condition){
   Data::RuledValidator->__condition
       (
-       $jp_name => Data::RuledValidator->__condition($name)
+       $jp_name => Data::RuledValidator->__condition($condition{$jp_name})
       );
 }
 
@@ -57,11 +55,11 @@ Data::RuledValidator::Language::Japanese - Data::RuledValidator usign rule writt
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -152,7 +150,7 @@ For Japanese zip code.
 
 =item 携帯メール
 
- mobile_mail is jp_mobile
+ mobile_mail is 携帯メール
 
 For Japanese mobile mail address.
 It allow many kinds of mobile email address.
@@ -250,8 +248,6 @@ L<http://search.cpan.org/dist/Data-RuledValidator-Language-Japanese>
 =item * L<Data/RuledVadliator/Plugin/Japanese>
 
 =back
-
-Thanks!
 
 =head1 COPYRIGHT & LICENSE
 
